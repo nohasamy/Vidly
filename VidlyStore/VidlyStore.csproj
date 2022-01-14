@@ -211,9 +211,14 @@
     <Compile Include="Migrations\202201142004497_MakeBirthdateNullable.Designer.cs">
       <DependentUpon>202201142004497_MakeBirthdateNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.cs" />
+    <Compile Include="Migrations\202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.Designer.cs">
+      <DependentUpon>202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -327,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201142004497_MakeBirthdateNullable.resx">
       <DependentUpon>202201142004497_MakeBirthdateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.resx">
+      <DependentUpon>202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
