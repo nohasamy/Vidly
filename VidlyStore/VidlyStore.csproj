@@ -215,6 +215,10 @@
     <Compile Include="Migrations\202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.Designer.cs">
       <DependentUpon>202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201142119500_PopulateGenreWithMigrationSQL.cs" />
+    <Compile Include="Migrations\202201142119500_PopulateGenreWithMigrationSQL.Designer.cs">
+      <DependentUpon>202201142119500_PopulateGenreWithMigrationSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -335,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.resx">
       <DependentUpon>202201142100599_AddPropsToMovieAndAddGenreAndMovieToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201142119500_PopulateGenreWithMigrationSQL.resx">
+      <DependentUpon>202201142119500_PopulateGenreWithMigrationSQL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
