@@ -7,13 +7,13 @@ namespace VidlyStore.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem : IMigrationMetadata
+    public sealed partial class PopulateEachMembershipTypeWithItsName : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateEachMembershipTypeWithItsName));
         
         string IMigrationMetadata.Id
         {
-            get { return "202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem"; }
+            get { return "202201140146439_PopulateEachMembershipTypeWithItsName"; }
         }
         
         string IMigrationMetadata.Source

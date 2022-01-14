@@ -195,9 +195,13 @@
     <Compile Include="Migrations\202201140041532_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>202201140041532_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem.cs" />
-    <Compile Include="Migrations\202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem.Designer.cs">
-      <DependentUpon>202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem.cs</DependentUpon>
+    <Compile Include="Migrations\202201140144068_AddNamePropToMembershipTypes.cs" />
+    <Compile Include="Migrations\202201140144068_AddNamePropToMembershipTypes.Designer.cs">
+      <DependentUpon>202201140144068_AddNamePropToMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201140146439_PopulateEachMembershipTypeWithItsName.cs" />
+    <Compile Include="Migrations\202201140146439_PopulateEachMembershipTypeWithItsName.Designer.cs">
+      <DependentUpon>202201140146439_PopulateEachMembershipTypeWithItsName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -304,8 +308,11 @@
     <EmbeddedResource Include="Migrations\202201140041532_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>202201140041532_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem.resx">
-      <DependentUpon>202201140132395_LoadCustomersFromDatabaseAndDisplayMembershipDiscountForThem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201140144068_AddNamePropToMembershipTypes.resx">
+      <DependentUpon>202201140144068_AddNamePropToMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201140146439_PopulateEachMembershipTypeWithItsName.resx">
+      <DependentUpon>202201140146439_PopulateEachMembershipTypeWithItsName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
