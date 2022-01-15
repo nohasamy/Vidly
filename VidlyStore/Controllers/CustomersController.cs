@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VidlyStore.Models;
+using VidlyStore.ViewModels;
 
 namespace VidlyStore.Controllers
 {
@@ -38,6 +39,46 @@ namespace VidlyStore.Controllers
             return View(customer);
 
         }
-       
+
+        public ActionResult New()
+        {
+            var viewModel = new CustomerFormViewModel
+            {
+                MembershipTypes = _context.MembershipTypes
+
+            };
+            return View("CustomerForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+            var viewModel = new CustomerFormViewModel
+            {
+                MembershipTypes = _context.MembershipTypes.ToList(),
+                Customer = customer
+            };
+            return View("CustomerForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Customer customer) // OR NewCustomerViewModel viewModel
+        {
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Display", "Customers");
+        }
     }
 }
