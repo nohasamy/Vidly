@@ -63,6 +63,7 @@ namespace VidlyStore.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer) // OR NewCustomerViewModel viewModel
         {
             if (!ModelState.IsValid)
