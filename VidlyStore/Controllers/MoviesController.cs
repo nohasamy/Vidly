@@ -66,7 +66,7 @@ namespace VidlyStore.Controllers
         {
             var viewModel = new MovieFormViewModel
             {
-                Genres = _context.Genres
+                Genres = _context.Genres.ToList()
             };
 
             return View("MovieForm", viewModel);
@@ -87,20 +87,32 @@ namespace VidlyStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(MovieFormViewModel viewModel) // OR Movie movie
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Movie movie) // OR Movie movie
         {
-            if (viewModel.Movie.Id == 0)
+            if (!ModelState.IsValid)
             {
-                viewModel.Movie.AddedDate = DateTime.Now;
-                _context.Movies.Add(viewModel.Movie);
+                var viewModel = new MovieFormViewModel
+                {
+                    Movie = movie,
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+
+            }
+
+            if (movie.Id == 0)
+            {
+                movie.AddedDate = DateTime.Now;
+                _context.Movies.Add(movie);
             }
             else
             {
-                var movieInDb = _context.Movies.Single(m => m.Id == viewModel.Movie.Id);
-                movieInDb.Name = viewModel.Movie.Name;
-                movieInDb.ReleaseDate = viewModel.Movie.ReleaseDate;
-                movieInDb.NumberInStock = viewModel.Movie.NumberInStock;
-                movieInDb.GenreId = viewModel.Movie.GenreId;
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.GenreId = movie.GenreId;
                 
             }
 
