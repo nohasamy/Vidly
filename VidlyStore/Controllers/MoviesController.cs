@@ -66,7 +66,8 @@ namespace VidlyStore.Controllers
         {
             var viewModel = new MovieFormViewModel
             {
-                Genres = _context.Genres.ToList()
+                Genres = _context.Genres.ToList(),
+                Movie = new Movie()
             };
 
             return View("MovieForm", viewModel);
@@ -87,8 +88,8 @@ namespace VidlyStore.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Save(Movie movie) // OR Movie movie
+        
+        public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
             {

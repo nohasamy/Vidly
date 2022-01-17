@@ -44,7 +44,8 @@ namespace VidlyStore.Controllers
         {
             var viewModel = new CustomerFormViewModel
             {
-                MembershipTypes = _context.MembershipTypes.ToList()
+                MembershipTypes = _context.MembershipTypes.ToList(),
+                Customer= new Customer()
             };
             return View("CustomerForm", viewModel);
         }
