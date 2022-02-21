@@ -1,2 +1,2 @@
 # Vidly
-Video Rental Website using ASP.net MVC 5
+Video Rental Website using C# ASP.net MVC 5
